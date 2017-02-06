@@ -1,41 +1,41 @@
-# Jekyll::Open::Street::Map
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jekyll/open/street/map`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# Jekyll::OpenStreetMap
+A Jekyll plugin that includes a Liquid Tag for embedding an Open Street Map in a page.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'jekyll-open-street-map'
+Unlike Google Maps, Open Street Map does not require an API Key.  Just install the gem.
+```
+gem install jekyll-open_street_map
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-open-street-map
-
 ## Usage
+To embed a map in a page use the `open_street_map` tag.
+```
+{% open_street_map %}
+```
 
-TODO: Write usage instructions here
+### Map Marker
+To place a marker on the map assign the location property in a pages front matter to the latitude and longitude delimited by a comma.
+```
+location: 43.084110, -77.665945
+```
 
-## Development
+### Map Properties
+You can set properties on the map tag directly use a `key="value"` style. The tag supportes the following properties:
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+#### Height/Width
+Set the height and/or the width of the map to the specified pixel value. The map is by default 150x150 pixels.
+```
+{% open_street_map height="100px" width="100px" %}
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+#### Class
+Set a custom class name for the map DOM element.
+
+#### ID
+Sets a custom id for the map DOM element. The default is open_street_map.
 
 ## Contributing
+For all feature request and bug reports please submit an issue on the [issues page](https://github.com/nokeeo/jekyll-open_street_map/issues). If you are interested in contributing source please open a PR.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jekyll-open-street-map.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+## Licence
+The gem is available as open source under the terms of the MIT License.
